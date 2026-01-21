@@ -5,7 +5,7 @@ project:
 website:
   description: "A blog built with Quarto"
   site-url: https://jim-bo.github.io/rmrfcancer/
-  title: "blog"
+  title: "rm -rf /cancer"
   navbar:
     right:
       - about.qmd
