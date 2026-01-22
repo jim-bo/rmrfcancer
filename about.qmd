@@ -6,14 +6,22 @@ about:
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://x.com/jim_bo_
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/jamesrlindsay/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/jim-bo
 
 ---
 
-About this blog
+Hi, I'm James Lindsay (jimbo).
+
+I'm the Director of Software Engineering and a bioinformatics engineer in the Department of Data Science at the [Dana-Farber Cancer Institute](https://www.dana-farber.org/).
+
+My work sits at the intersection of cancer genomics, spatial biology, and clinical informatics. I spend my days building software and data infrastructure that translates massive genomic datasets into something clinicians can actually use to help patients.
+
+Most notably, I helped architect **MatchMiner**, an open-source platform that automatically matches cancer patients to clinical trials based on their genomic profiles. I also led the development of **ImmunoProfile**, a machine-learning workflow that uses spatial data to understand the tumor immune microenvironment.
+
+I've also built infrastructure for major national consortia like **AACR Project GENIE** and contribute to the **cBioPortal**.

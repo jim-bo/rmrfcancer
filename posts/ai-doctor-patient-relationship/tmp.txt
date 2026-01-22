@@ -1,0 +1,57 @@
+
+```{ojs}
+//| echo: false
+
+// 1. Load D3
+d3 = require("d3")
+
+// 2. Prepare Data
+data = plot_data_raw.x.map((_, i) => ({
+  x: plot_data_raw.x[i],
+  y: plot_data_raw.y[i],
+  Type: plot_data_raw.Type[i],
+  Name: plot_data_raw.Name[i],
+  Description: plot_data_raw.Description[i]
+}))
+
+// 3. Define Mutable State
+mutable hoveredInfo = "Hover over a point to view details here."
+
+// 4. Create Layout
+{
+  // FLEXBOX CONTAINER
+  // Added 'justify-content: center' to center the plot in the wide outset area
+  const div = html`<div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: center;">
+    <div id="plot-area" style="width: 60%; min-width: 300px; max-width: 600px;"></div>
+    <div style="width: 35%; max-width: 300px; padding: 20px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px;">
+      ${hoveredInfo}
+    </div>
+  </div>`;
+
+  // Define Plot
+  const plot = Plot.plot({
+    height: 400,
+    grid: true,
+    marks: [
+      Plot.dot(data, {x: "x", y: "y", fill: "Type", r: 8}),
+      Plot.tip(data, Plot.pointer({x: "x", y: "y", title: "Name"}))
+    ],
+    color: { legend: true, domain: ["Trial", "Patient"], range: ["#007d65", "#d9534f"] }
+  });
+
+  // Attach Listeners
+  d3.select(plot)
+    .selectAll("circle")
+    .on("mouseenter", (event, d) => {
+      mutable hoveredInfo = d.Description;
+      d3.select(event.currentTarget).attr("r", 12).attr("stroke", "black");
+    })
+    .on("mouseleave", (event) => {
+      mutable hoveredInfo = "Hover over a point to view details here.";
+      d3.select(event.currentTarget).attr("r", 8).attr("stroke", "none");
+    });
+
+  div.querySelector("#plot-area").append(plot);
+  return div;
+}
+```
