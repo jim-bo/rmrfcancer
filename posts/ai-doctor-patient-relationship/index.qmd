@@ -1,5 +1,5 @@
 ---
-title: "How AI is Buying Back the Doctor-Patient Relationship"
+title: "How AI Buys Your Oncologist Some Time"
 author: "James Lindsay"
 date: "2026-01-21"
 categories: [AI, Medicine, Bioinformatics, Clinical Trials]
@@ -9,7 +9,7 @@ image: "image.png"
 ![](image.png)
 
 
-## **How AI Maps the Hidden Geometry of Clinical Trials.**
+## **AI Maps the Hidden Geometry of Clinical Trials.**
 
 A patient sits with their oncologist, absorbing the news that their cancer has progressed. They watch as the doctor tabs between a dense electronic medical record, a PDF of genetic test results, and a browser window open to ClinicalTrials.gov.
 
@@ -51,15 +51,15 @@ The first stream is a **clinical summary**: a concise narrative of the patientâ€
 ```{mermaid}
 graph LR
     Input[Patient History] --> LLM(LLM Translation)
-    
+
     %% The Dual Streams
     LLM -- "Clinical Summary" --> Search{Vector Search}
     LLM -- "Exclusion Profile" --> Judge
-    
+
     %% Convergence
     Search -- "Candidates" --> Judge{LLM Judge}
     Judge --> Final[Final List]
-    
+
     %% Styling
     style Input fill:#fff,stroke:#333,stroke-width:1px
     style Final fill:#007d65,color:#fff,stroke:#004d40,stroke-width:2px
