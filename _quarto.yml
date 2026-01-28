@@ -10,15 +10,19 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/jim-bo
       - icon: twitter
-        href: https://twitter.com
+        href: https://x.com/jim_bo_
 format:
   html:
     theme:
-      - cosmo
+      - litera
       - brand
     css: styles.css
+    mainfont: "Merriweather"
+    monofont: "Fira Code"
+    fontsize: 1.1em
+    linestretch: 1.7
 
 
 
