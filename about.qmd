@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About me"
 image: profile.jpg
 about:
   template: jolla
@@ -25,3 +25,13 @@ My work sits at the intersection of cancer genomics, spatial biology, and clinic
 Most notably, I helped architect **MatchMiner**, an open-source platform that automatically matches cancer patients to clinical trials based on their genomic profiles. I also led the development of **ImmunoProfile**, a machine-learning workflow that uses spatial data to understand the tumor immune microenvironment.
 
 I've also built infrastructure for major national consortia like **AACR Project GENIE** and contribute to the **cBioPortal**.
+
+---
+
+## About this blog
+
+I wanted to start writing casually for a long time but I've always struggled getting started.
+Through my profesesional career I've found academic writing to be exetremely challenging and time consuming
+ and some inital attempts at "blogging" failed quickly. I tried again recently, this time relying heavily on
+ AI tools to help with the writing. If I can successfully keep this going I'll describe my process. In general
+ the text on this page is mostly written by me but heavily edited by AI.
