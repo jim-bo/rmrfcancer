@@ -1,27 +1,208 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
-      xmlns:media="http://search.yahoo.com/mrss/" 
-      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-      xmlns:dc="http://purl.org/dc/elements/1.1/" 
-      version="2.0">
-<channel>
-<title>rm -rf /cancer</title>
-<link>https://jim-bo.github.io/rmrfcancer/</link>
-<atom:link href="https://jim-bo.github.io/rmrfcancer/index.xml" rel="self" type="application/rss+xml"/>
-<description>A blog built with Quarto</description>
-<generator>quarto-1.8.27</generator>
-<lastBuildDate>Wed, 21 Jan 2026 05:00:00 GMT</lastBuildDate>
-<item>
-  <title>How AI is Buying Back the Doctor-Patient Relationship</title>
-  <dc:creator>James Lindsay</dc:creator>
-  <link>https://jim-bo.github.io/rmrfcancer/posts/ai-doctor-patient-relationship/</link>
-  <description><![CDATA[ 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="James Lindsay">
+<meta name="dcterms.date" content="2026-01-21">
+
+<title>How AI is Buying Back the Doctor-Patient Relationship – rm -rf /cancer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4dccfa26bd2531473427e0227a5647eb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">rm -rf /cancer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jim-bo"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/jim_bo_"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How AI is Buying Back the Doctor-Patient Relationship</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">Medicine</div>
+                <div class="quarto-category">Bioinformatics</div>
+                <div class="quarto-category">Clinical Trials</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>James Lindsay </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 21, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p><img src="https://jim-bo.github.io/rmrfcancer/posts/ai-doctor-patient-relationship/image.png" class="img-fluid"></p>
+<p><img src="image.png" class="img-fluid"></p>
 <section id="how-ai-maps-the-hidden-geometry-of-clinical-trials." class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="how-ai-maps-the-hidden-geometry-of-clinical-trials."><strong>How AI Maps the Hidden Geometry of Clinical Trials.</strong></h2>
 <p>A patient sits with their oncologist, absorbing the news that their cancer has progressed. They watch as the doctor tabs between a dense electronic medical record, a PDF of genetic test results, and a browser window open to ClinicalTrials.gov.</p>
@@ -36,7 +217,7 @@
 <p>This “translation tax” is what breaks the workflow. Existing tools like ClinicalTrials.gov assume that clinicians will search for trials the way database administrators do: by translating clinical questions into structured queries and predefined fields. But in practice, physicians think in narrative, patient-centered terms. The burden of translating a complex clinical situation into the language of a database has long fallen on them, eating up the precious few minutes they have with the patient.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jim-bo.github.io/rmrfcancer/posts/ai-doctor-patient-relationship/illustration.png" class="img-fluid figure-img"></p>
+<p><img src="illustration.png" class="img-fluid figure-img"></p>
 <figcaption><strong>The Translation Tax.</strong> On the left, the physician carries the cognitive burden of synthesizing unstructured data from scattered sources. On the right, AI acts as a translation layer, ingesting the raw history and presenting a unified, actionable clinical picture. Illustration generated by <a href="https://ilus.ai/">ilus.ai</a>.</figcaption>
 </figure>
 </div>
@@ -94,595 +275,82 @@ Figure&nbsp;1: <strong>The Funnel of Refinement.</strong> The system balances sp
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-umap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="152" data-source-offset="-26" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 151;"><span id="cb1-152">d3 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">require</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"d3"</span>)</span>
-<span id="cb1-153">marked <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">require</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"marked"</span>)</span>
-<span id="cb1-154"></span>
-<span id="cb1-155"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// 2. Prepare Data</span></span>
-<span id="cb1-156">data <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">map</span>((_<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> i) <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">=&gt;</span> ({</span>
-<span id="cb1-157">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x</span>[i]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-158">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y</span>[i]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-159">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">Type</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Type</span>[i]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-160">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">Name</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Name</span>[i]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-161">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">Description</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> plot_data_raw<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Description</span>[i]</span>
-<span id="cb1-162">}))</span>
-<span id="cb1-163"></span>
-<span id="cb1-164"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// 3. (Removed mutable state to prevent re-rendering loop)</span></span>
-<span id="cb1-165"></span>
-<span id="cb1-166"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// 4. Create Layout</span></span>
-<span id="cb1-167">{</span>
-<span id="cb1-168">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Capture Patient Summary for default state and parse it</span></span>
-<span id="cb1-169">  <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">const</span> patientSummary <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> marked<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">parse</span>(data[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Description</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-170"></span>
-<span id="cb1-171">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// FLEXBOX CONTAINER</span></span>
-<span id="cb1-172">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// We give the info box an ID 'info-sidebar' to target it directly</span></span>
-<span id="cb1-173">  <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">const</span> div <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">html</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`&lt;div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: center;"&gt;</span></span>
-<span id="cb1-174"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;div id="plot-area" style="width: 60%; min-width: 300px; max-width: 800px;"&gt;&lt;/div&gt;</span></span>
-<span id="cb1-175"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;div id="info-sidebar" style="width: 35%; max-width: 500px; height: 500px; padding: 15px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px; font-size: 0.8em; overflow-y: auto;"&gt;</span></span>
-<span id="cb1-176"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      &lt;!-- We inject the parsed HTML directly --&gt;</span></span>
-<span id="cb1-177"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;/div&gt;</span></span>
-<span id="cb1-178"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  &lt;/div&gt;`</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-179"></span>
-<span id="cb1-180">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Set initial content</span></span>
-<span id="cb1-181">  div<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">querySelector</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#info-sidebar"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">innerHTML</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> patientSummary<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-182"></span>
-<span id="cb1-183">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Define Plot</span></span>
-<span id="cb1-184">  <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">const</span> plot <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>({</span>
-<span id="cb1-185">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">height</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">500</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-186">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">grid</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-187">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> { <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"PC1"</span> }<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-188">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> { <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"PC2"</span> }<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-189">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">style</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {</span>
-<span id="cb1-190">        <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fontSize</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"16px"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-191">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"--plot-legend-font-size"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"16px"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-192">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"--plot-axis-label-font-size"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"16px"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-193">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"--plot-axis-tick-font-size"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"14px"</span></span>
-<span id="cb1-194">    }<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-195">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">marks</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> [</span>
-<span id="cb1-196">      Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dot</span>(data<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"x"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"y"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Type"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">r</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">8</span>})<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-197">      Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">tip</span>(data<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">pointer</span>({<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"x"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"y"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">title</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Name"</span>}))</span>
-<span id="cb1-198">    ]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-199">    <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">color</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {</span>
-<span id="cb1-200">        <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">legend</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-201">        <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">domain</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Trial"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Patient"</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-202">        <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">range</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#007d65"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#d9534f"</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-203">        <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">style</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> { <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fontSize</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"16px"</span> }</span>
-<span id="cb1-204">    }</span>
-<span id="cb1-205">  })<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-206"></span>
-<span id="cb1-207">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Attach Listeners</span></span>
-<span id="cb1-208">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// We explicitly bind 'data' to the circles to ensure 'd' is the data object</span></span>
-<span id="cb1-209">  d3<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">select</span>(plot)</span>
-<span id="cb1-210">    <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">selectAll</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"circle"</span>)</span>
-<span id="cb1-211">    <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">data</span>(data)</span>
-<span id="cb1-212">    <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">on</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"mouseenter"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> (<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">event</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> d) <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">=&gt;</span> {</span>
-<span id="cb1-213">      <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Update text directly without triggering a re-render</span></span>
-<span id="cb1-214">      div<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">querySelector</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#info-sidebar"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">innerHTML</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> marked<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">parse</span>(d<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">Description</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-215">      d3<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">select</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">event</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">currentTarget</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">attr</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"r"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">attr</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"stroke"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"black"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-216">    })</span>
-<span id="cb1-217">    <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">on</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"mouseleave"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> (<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">event</span>) <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">=&gt;</span> {</span>
-<span id="cb1-218">      <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Do NOT revert text; keep the last hovered details visible</span></span>
-<span id="cb1-219">      <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// div.querySelector("#info-sidebar").innerHTML = patientSummary;</span></span>
-<span id="cb1-220"></span>
-<span id="cb1-221">      <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">// Only reset the visual style of the point</span></span>
-<span id="cb1-222">      d3<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">select</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">event</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">currentTarget</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">attr</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"r"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">8</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">attr</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"stroke"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"none"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-223">    })<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-224"></span>
-<span id="cb1-225">  div<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">querySelector</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#plot-area"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">append</span>(plot)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-226">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> div<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb1-227">}</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="152" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 151;"><span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"d3"</span>)</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>marked <span class="op">=</span> <span class="pp">require</span>(<span class="st">"marked"</span>)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Prepare Data</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> plot_data_raw<span class="op">.</span><span class="at">x</span><span class="op">.</span><span class="fu">map</span>((_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> plot_data_raw<span class="op">.</span><span class="at">x</span>[i]<span class="op">,</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> plot_data_raw<span class="op">.</span><span class="at">y</span>[i]<span class="op">,</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Type</span><span class="op">:</span> plot_data_raw<span class="op">.</span><span class="at">Type</span>[i]<span class="op">,</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Name</span><span class="op">:</span> plot_data_raw<span class="op">.</span><span class="at">Name</span>[i]<span class="op">,</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Description</span><span class="op">:</span> plot_data_raw<span class="op">.</span><span class="at">Description</span>[i]</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. (Removed mutable state to prevent re-rendering loop)</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Create Layout</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Capture Patient Summary for default state and parse it</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> patientSummary <span class="op">=</span> marked<span class="op">.</span><span class="fu">parse</span>(data[<span class="dv">0</span>]<span class="op">.</span><span class="at">Description</span>)<span class="op">;</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  <span class="co">// FLEXBOX CONTAINER</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  <span class="co">// We give the info box an ID 'info-sidebar' to target it directly</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> div <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: center;"&gt;</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div id="plot-area" style="width: 60%; min-width: 300px; max-width: 800px;"&gt;&lt;/div&gt;</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div id="info-sidebar" style="width: 35%; max-width: 500px; height: 500px; padding: 15px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px; font-size: 0.8em; overflow-y: auto;"&gt;</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;!-- We inject the parsed HTML directly --&gt;</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Set initial content</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#info-sidebar"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> patientSummary<span class="op">;</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Define Plot</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> plot <span class="op">=</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"PC1"</span> }<span class="op">,</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"PC2"</span> }<span class="op">,</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    <span class="dt">style</span><span class="op">:</span> {</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"16px"</span><span class="op">,</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--plot-legend-font-size"</span><span class="op">:</span> <span class="st">"16px"</span><span class="op">,</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--plot-axis-label-font-size"</span><span class="op">:</span> <span class="st">"16px"</span><span class="op">,</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--plot-axis-tick-font-size"</span><span class="op">:</span> <span class="st">"14px"</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"Type"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">8</span>})<span class="op">,</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">tip</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">pointer</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> <span class="st">"Name"</span>}))</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        <span class="dt">domain</span><span class="op">:</span> [<span class="st">"Trial"</span><span class="op">,</span> <span class="st">"Patient"</span>]<span class="op">,</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        <span class="dt">range</span><span class="op">:</span> [<span class="st">"#007d65"</span><span class="op">,</span> <span class="st">"#d9534f"</span>]<span class="op">,</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"16px"</span> }</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Attach Listeners</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="co">// We explicitly bind 'data' to the circles to ensure 'd' is the data object</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  d3<span class="op">.</span><span class="fu">select</span>(plot)</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(data)</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">on</span>(<span class="st">"mouseenter"</span><span class="op">,</span> (<span class="bu">event</span><span class="op">,</span> d) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Update text directly without triggering a re-render</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      div<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#info-sidebar"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> marked<span class="op">.</span><span class="fu">parse</span>(d<span class="op">.</span><span class="at">Description</span>)<span class="op">;</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">select</span>(<span class="bu">event</span><span class="op">.</span><span class="at">currentTarget</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">12</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"black"</span>)<span class="op">;</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">on</span>(<span class="st">"mouseleave"</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Do NOT revert text; keep the last hovered details visible</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      <span class="co">// div.querySelector("#info-sidebar").innerHTML = patientSummary;</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Only reset the visual style of the point</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">select</span>(<span class="bu">event</span><span class="op">.</span><span class="at">currentTarget</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">8</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">;</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  div<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">"#plot-area"</span>)<span class="op">.</span><span class="fu">append</span>(plot)<span class="op">;</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> div<span class="op">;</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -750,14 +418,421 @@ Figure&nbsp;2: <strong>Mapping the Search Space.</strong> Traditional database s
 
 </section>
 
- ]]></description>
-  <category>AI</category>
-  <category>Medicine</category>
-  <category>Bioinformatics</category>
-  <category>Clinical Trials</category>
-  <guid>https://jim-bo.github.io/rmrfcancer/posts/ai-doctor-patient-relationship/</guid>
-  <pubDate>Wed, 21 Jan 2026 05:00:00 GMT</pubDate>
-  <media:content url="https://jim-bo.github.io/rmrfcancer/posts/ai-doctor-patient-relationship/image.png" medium="image" type="image/png" height="81" width="144"/>
-</item>
-</channel>
-</rss>
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gMS4gTG9hZCBEMyBhbmQgTWFya2VkXG5kMyA9IHJlcXVpcmUoXCJkM1wiKVxubWFya2VkID0gcmVxdWlyZShcIm1hcmtlZFwiKVxuXG4vLyAyLiBQcmVwYXJlIERhdGFcbmRhdGEgPSBwbG90X2RhdGFfcmF3LngubWFwKChfLCBpKSA9PiAoe1xuICB4OiBwbG90X2RhdGFfcmF3LnhbaV0sXG4gIHk6IHBsb3RfZGF0YV9yYXcueVtpXSxcbiAgVHlwZTogcGxvdF9kYXRhX3Jhdy5UeXBlW2ldLFxuICBOYW1lOiBwbG90X2RhdGFfcmF3Lk5hbWVbaV0sXG4gIERlc2NyaXB0aW9uOiBwbG90X2RhdGFfcmF3LkRlc2NyaXB0aW9uW2ldXG59KSlcblxuLy8gMy4gKFJlbW92ZWQgbXV0YWJsZSBzdGF0ZSB0byBwcmV2ZW50IHJlLXJlbmRlcmluZyBsb29wKVxuXG4vLyA0LiBDcmVhdGUgTGF5b3V0XG57XG4gIC8vIENhcHR1cmUgUGF0aWVudCBTdW1tYXJ5IGZvciBkZWZhdWx0IHN0YXRlIGFuZCBwYXJzZSBpdFxuICBjb25zdCBwYXRpZW50U3VtbWFyeSA9IG1hcmtlZC5wYXJzZShkYXRhWzBdLkRlc2NyaXB0aW9uKTtcblxuICAvLyBGTEVYQk9YIENPTlRBSU5FUlxuICAvLyBXZSBnaXZlIHRoZSBpbmZvIGJveCBhbiBJRCAnaW5mby1zaWRlYmFyJyB0byB0YXJnZXQgaXQgZGlyZWN0bHlcbiAgY29uc3QgZGl2ID0gaHRtbGA8ZGl2IHN0eWxlPVwiZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZ2FwOiAyMHB4OyBhbGlnbi1pdGVtczogZmxleC1zdGFydDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XCI+XG4gICAgPGRpdiBpZD1cInBsb3QtYXJlYVwiIHN0eWxlPVwid2lkdGg6IDYwJTsgbWluLXdpZHRoOiAzMDBweDsgbWF4LXdpZHRoOiA4MDBweDtcIj48L2Rpdj5cbiAgICA8ZGl2IGlkPVwiaW5mby1zaWRlYmFyXCIgc3R5bGU9XCJ3aWR0aDogMzUlOyBtYXgtd2lkdGg6IDUwMHB4OyBoZWlnaHQ6IDUwMHB4OyBwYWRkaW5nOiAxNXB4OyBiYWNrZ3JvdW5kLWNvbG9yOiAjZjhmOWZhOyBib3JkZXI6IDFweCBzb2xpZCAjZTllY2VmOyBib3JkZXItcmFkaXVzOiA1cHg7IGZvbnQtc2l6ZTogMC44ZW07IG92ZXJmbG93LXk6IGF1dG87XCI+XG4gICAgICA8IS0tIFdlIGluamVjdCB0aGUgcGFyc2VkIEhUTUwgZGlyZWN0bHkgLS0+XG4gICAgPC9kaXY+XG4gIDwvZGl2PmA7XG5cbiAgLy8gU2V0IGluaXRpYWwgY29udGVudFxuICBkaXYucXVlcnlTZWxlY3RvcihcIiNpbmZvLXNpZGViYXJcIikuaW5uZXJIVE1MID0gcGF0aWVudFN1bW1hcnk7XG5cbiAgLy8gRGVmaW5lIFBsb3RcbiAgY29uc3QgcGxvdCA9IFBsb3QucGxvdCh7XG4gICAgaGVpZ2h0OiA1MDAsXG4gICAgZ3JpZDogdHJ1ZSxcbiAgICB4OiB7IGxhYmVsOiBcIlBDMVwiIH0sXG4gICAgeTogeyBsYWJlbDogXCJQQzJcIiB9LFxuICAgIHN0eWxlOiB7XG4gICAgICAgIGZvbnRTaXplOiBcIjE2cHhcIixcbiAgICAgICAgXCItLXBsb3QtbGVnZW5kLWZvbnQtc2l6ZVwiOiBcIjE2cHhcIixcbiAgICAgICAgXCItLXBsb3QtYXhpcy1sYWJlbC1mb250LXNpemVcIjogXCIxNnB4XCIsXG4gICAgICAgIFwiLS1wbG90LWF4aXMtdGljay1mb250LXNpemVcIjogXCIxNHB4XCJcbiAgICB9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LmRvdChkYXRhLCB7eDogXCJ4XCIsIHk6IFwieVwiLCBmaWxsOiBcIlR5cGVcIiwgcjogOH0pLFxuICAgICAgUGxvdC50aXAoZGF0YSwgUGxvdC5wb2ludGVyKHt4OiBcInhcIiwgeTogXCJ5XCIsIHRpdGxlOiBcIk5hbWVcIn0pKVxuICAgIF0sXG4gICAgY29sb3I6IHtcbiAgICAgICAgbGVnZW5kOiB0cnVlLFxuICAgICAgICBkb21haW46IFtcIlRyaWFsXCIsIFwiUGF0aWVudFwiXSxcbiAgICAgICAgcmFuZ2U6IFtcIiMwMDdkNjVcIiwgXCIjZDk1MzRmXCJdLFxuICAgICAgICBzdHlsZTogeyBmb250U2l6ZTogXCIxNnB4XCIgfVxuICAgIH1cbiAgfSk7XG5cbiAgLy8gQXR0YWNoIExpc3RlbmVyc1xuICAvLyBXZSBleHBsaWNpdGx5IGJpbmQgJ2RhdGEnIHRvIHRoZSBjaXJjbGVzIHRvIGVuc3VyZSAnZCcgaXMgdGhlIGRhdGEgb2JqZWN0XG4gIGQzLnNlbGVjdChwbG90KVxuICAgIC5zZWxlY3RBbGwoXCJjaXJjbGVcIilcbiAgICAuZGF0YShkYXRhKVxuICAgIC5vbihcIm1vdXNlZW50ZXJcIiwgKGV2ZW50LCBkKSA9PiB7XG4gICAgICAvLyBVcGRhdGUgdGV4dCBkaXJlY3RseSB3aXRob3V0IHRyaWdnZXJpbmcgYSByZS1yZW5kZXJcbiAgICAgIGRpdi5xdWVyeVNlbGVjdG9yKFwiI2luZm8tc2lkZWJhclwiKS5pbm5lckhUTUwgPSBtYXJrZWQucGFyc2UoZC5EZXNjcmlwdGlvbik7XG4gICAgICBkMy5zZWxlY3QoZXZlbnQuY3VycmVudFRhcmdldCkuYXR0cihcInJcIiwgMTIpLmF0dHIoXCJzdHJva2VcIiwgXCJibGFja1wiKTtcbiAgICB9KVxuICAgIC5vbihcIm1vdXNlbGVhdmVcIiwgKGV2ZW50KSA9PiB7XG4gICAgICAvLyBEbyBOT1QgcmV2ZXJ0IHRleHQ7IGtlZXAgdGhlIGxhc3QgaG92ZXJlZCBkZXRhaWxzIHZpc2libGVcbiAgICAgIC8vIGRpdi5xdWVyeVNlbGVjdG9yKFwiI2luZm8tc2lkZWJhclwiKS5pbm5lckhUTUwgPSBwYXRpZW50U3VtbWFyeTtcblxuICAgICAgLy8gT25seSByZXNldCB0aGUgdmlzdWFsIHN0eWxlIG9mIHRoZSBwb2ludFxuICAgICAgZDMuc2VsZWN0KGV2ZW50LmN1cnJlbnRUYXJnZXQpLmF0dHIoXCJyXCIsIDgpLmF0dHIoXCJzdHJva2VcIiwgXCJub25lXCIpO1xuICAgIH0pO1xuXG4gIGRpdi5xdWVyeVNlbGVjdG9yKFwiI3Bsb3QtYXJlYVwiKS5hcHBlbmQocGxvdCk7XG4gIHJldHVybiBkaXY7XG59XG4ifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/ai-doctor-patient-relationship";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jim-bo\.github\.io\/rmrfcancer\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
