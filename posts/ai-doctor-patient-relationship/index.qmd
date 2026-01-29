@@ -9,7 +9,7 @@ image: "image.png"
 ![](image.png)
 
 
-## **AI Maps the Hidden Geometry of Clinical Trials.**
+## **The Hidden Geometry of Clinical Trials.**
 
 A patient sits with their oncologist, absorbing the news that their cancer has progressed. They watch as the doctor tabs between a dense electronic medical record, a PDF of genetic test results, and a browser window open to ClinicalTrials.gov.
 
