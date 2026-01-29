@@ -23,6 +23,4 @@ format:
     monofont: "Fira Code"
     fontsize: 1.1em
     linestretch: 1.7
-
-
-
+    embed-resources: true
