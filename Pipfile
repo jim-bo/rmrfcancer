@@ -7,6 +7,7 @@ name = "pypi"
 quarto-cli = "*"
 plotly = "*"
 pandas = "*"
+requests = "*"
 
 [dev-packages]
 
