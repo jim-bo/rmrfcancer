@@ -4,12 +4,14 @@ Fetch property and street characteristics from Brookline, MA public GIS data.
 
 Data sources:
   - MassGIS L3 Parcel+Assessor FeatureServer (primary, richest assessor data)
+  - MassDOT Road Inventory FeatureServer (road width, lanes, surface type)
   - Brookline ArcGIS Server (gisweb.brooklinema.gov) for street edges & buildings
   - Brookline local parcel data (fallback / supplemental owner info)
 
 Usage:
   python brookline_gis.py "White Place"
   python brookline_gis.py --street "White Pl"
+  python brookline_gis.py --street-area "White Pl"
   python brookline_gis.py --address "10 White Pl"
   python brookline_gis.py --parcel-id "217-02-00"
   python brookline_gis.py --discover
@@ -17,6 +19,7 @@ Usage:
 
 import argparse
 import json
+import math
 import sys
 
 import requests
@@ -48,8 +51,18 @@ MASSDOT_ROADS_URL = (
 )
 MASSDOT_ROADS_LAYER = 0
 
+# MassDOT Road Inventory (detailed: width, lanes, surface type, shoulder widths)
+MASSDOT_INVENTORY_URL = (
+    "https://gis.massdot.state.ma.us/arcgis/rest/services"
+    "/Roads/RoadInventoryYearEndFiles/FeatureServer"
+)
+MASSDOT_INVENTORY_LAYER = 0
+
 # Approximate bounding box for Brookline, MA (WGS84)
 BROOKLINE_BBOX = "-71.18,42.31,-71.10,42.35"
+
+# Default road width (ft) when data is unavailable — MassDOT statewide avg is ~20 ft
+DEFAULT_ROAD_WIDTH_FT = 20.0
 
 TIMEOUT = 30
 
@@ -160,6 +173,104 @@ def massdot_roads_in_brookline(street_name):
     }
     return query_layer(MASSDOT_ROADS_URL, MASSDOT_ROADS_LAYER, where,
                        extra_params=extra)
+
+
+def massdot_road_inventory_in_brookline(street_name):
+    """MassDOT Road Inventory segments (has width, lanes, surface type).
+
+    Returns segments with geometry so we can compute length.
+    """
+    where = f"UPPER(Street_Name) LIKE '%{street_name.upper()}%'"
+    out_fields = (
+        "Street_Name,Surface_Wd,Shldr_Lt_W,Shldr_Rt_W,ROW_Width,"
+        "Num_Lanes,Surface_Tp,Med_Width,F_Class"
+    )
+    extra = {
+        "geometry": BROOKLINE_BBOX,
+        "geometryType": "esriGeometryEnvelope",
+        "inSR": "4326",
+        "spatialRel": "esriSpatialRelIntersects",
+        "outSR": "2249",  # MA State Plane (feet) so Shape__Length is in feet
+    }
+    return query_layer(MASSDOT_INVENTORY_URL, MASSDOT_INVENTORY_LAYER,
+                       where, out_fields=out_fields, return_geometry=True,
+                       extra_params=extra)
+
+
+def _polyline_length_ft(geometry):
+    """Compute total length of an ArcGIS polyline geometry in the geometry's units.
+
+    Assumes coordinates are already in a linear unit (e.g., State Plane feet).
+    """
+    total = 0.0
+    for path in geometry.get("paths", []):
+        for i in range(len(path) - 1):
+            dx = path[i + 1][0] - path[i][0]
+            dy = path[i + 1][1] - path[i][1]
+            total += math.sqrt(dx * dx + dy * dy)
+    return total
+
+
+def compute_street_area(street_name):
+    """Compute total street surface area for a street in Brookline.
+
+    Strategy:
+      1. Query MassDOT Road Inventory for segments matching the street name
+         within Brookline's bounding box. This gives us Surface_Wd (width in ft)
+         and polyline geometry (in State Plane feet, so length is in feet).
+      2. For each segment: area = length × surface_width.
+      3. Sum across all segments.
+
+    Returns (segments_info, summary_dict).
+    """
+    features = massdot_road_inventory_in_brookline(street_name)
+
+    segments = []
+    total_length = 0.0
+    total_area = 0.0
+    widths_seen = []
+
+    for feat in features:
+        a = feat.get("attributes", {})
+        geom = feat.get("geometry", {})
+
+        seg_length = _polyline_length_ft(geom) if geom else 0.0
+        width = a.get("Surface_Wd") or DEFAULT_ROAD_WIDTH_FT
+        seg_area = seg_length * width
+
+        total_length += seg_length
+        total_area += seg_area
+        if a.get("Surface_Wd"):
+            widths_seen.append(a["Surface_Wd"])
+
+        segments.append({
+            "street_name": a.get("Street_Name", ""),
+            "length_ft": seg_length,
+            "surface_width_ft": width,
+            "width_from_data": a.get("Surface_Wd") is not None,
+            "area_sq_ft": seg_area,
+            "num_lanes": a.get("Num_Lanes"),
+            "surface_type": a.get("Surface_Tp"),
+            "shoulder_left_ft": a.get("Shldr_Lt_W"),
+            "shoulder_right_ft": a.get("Shldr_Rt_W"),
+            "row_width_ft": a.get("ROW_Width"),
+            "median_width_ft": a.get("Med_Width"),
+            "func_class": a.get("F_Class"),
+        })
+
+    avg_width = sum(widths_seen) / len(widths_seen) if widths_seen else DEFAULT_ROAD_WIDTH_FT
+    summary = {
+        "street_name": street_name,
+        "num_segments": len(segments),
+        "total_length_ft": total_length,
+        "avg_surface_width_ft": avg_width,
+        "total_area_sq_ft": total_area,
+        "total_area_acres": total_area / 43560.0,
+        "width_data_available": len(widths_seen),
+        "width_data_missing": len(segments) - len(widths_seen),
+    }
+
+    return segments, summary
 
 
 # ---------------------------------------------------------------------------
@@ -291,6 +402,48 @@ def format_street(feature):
     return "\n".join(lines)
 
 
+def format_street_area_summary(segments, summary):
+    """Format the street area computation for display."""
+    lines = []
+    s = summary
+
+    lines.append(f"Street Area Summary: {s['street_name']}")
+    lines.append("=" * 50)
+    lines.append(f"  Segments found:      {s['num_segments']}")
+    lines.append(f"  Total length:        {s['total_length_ft']:,.1f} ft "
+                 f"({s['total_length_ft'] / 5280:.2f} mi)")
+    lines.append(f"  Avg surface width:   {s['avg_surface_width_ft']:.1f} ft")
+    lines.append(f"  Total surface area:  {s['total_area_sq_ft']:,.0f} sq ft")
+    lines.append(f"                       {s['total_area_acres']:.3f} acres")
+
+    if s["width_data_missing"] > 0:
+        lines.append(f"  Note: {s['width_data_missing']} of {s['num_segments']} segments "
+                     f"used default width ({DEFAULT_ROAD_WIDTH_FT} ft)")
+
+    lines.append("")
+    lines.append("Segment Details:")
+    lines.append("-" * 50)
+
+    for i, seg in enumerate(segments, 1):
+        width_note = "" if seg["width_from_data"] else " (default)"
+        lines.append(f"  Segment {i}:")
+        lines.append(f"    Length:        {seg['length_ft']:,.1f} ft")
+        lines.append(f"    Width:         {seg['surface_width_ft']:.1f} ft{width_note}")
+        lines.append(f"    Area:          {seg['area_sq_ft']:,.0f} sq ft")
+        if seg["num_lanes"]:
+            lines.append(f"    Lanes:         {seg['num_lanes']}")
+        if seg["surface_type"]:
+            lines.append(f"    Surface:       {seg['surface_type']}")
+        if seg["row_width_ft"]:
+            lines.append(f"    ROW width:     {seg['row_width_ft']:.1f} ft")
+        if seg["shoulder_left_ft"] or seg["shoulder_right_ft"]:
+            left = seg["shoulder_left_ft"] or 0
+            right = seg["shoulder_right_ft"] or 0
+            lines.append(f"    Shoulders:     L={left:.0f} ft, R={right:.0f} ft")
+
+    return "\n".join(lines)
+
+
 # ---------------------------------------------------------------------------
 # Discovery
 # ---------------------------------------------------------------------------
@@ -350,18 +503,21 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s "White Pl"               Search parcels on White Place
-  %(prog)s "10 White Pl"            Search for 10 White Place
-  %(prog)s --street "White Pl"      Search parcels + street data
-  %(prog)s --address "10 White Pl"  Search by specific address
-  %(prog)s --parcel-id "217-02-00"  Search by Brookline parcel ID
-  %(prog)s --loc-id "F_46_123"      Search by MassGIS LOC_ID
-  %(prog)s --source local "Beacon"  Use Brookline server instead of MassGIS
-  %(prog)s --discover               List available fields in each layer
-  %(prog)s --raw "White Pl"         Show raw JSON attributes
+  %(prog)s "White Pl"                  Search parcels on White Place
+  %(prog)s "10 White Pl"               Search for 10 White Place
+  %(prog)s --street-area "White Pl"    Compute street surface area (sq ft)
+  %(prog)s --street "White Pl"         Search parcels + street segment data
+  %(prog)s --address "10 White Pl"     Search by specific address
+  %(prog)s --parcel-id "217-02-00"     Search by Brookline parcel ID
+  %(prog)s --loc-id "F_46_123"         Search by MassGIS LOC_ID
+  %(prog)s --source local "Beacon"     Use Brookline server instead of MassGIS
+  %(prog)s --discover                  List available fields in each layer
+  %(prog)s --raw "White Pl"            Show raw JSON attributes
         """,
     )
     parser.add_argument("query", nargs="?", help="Street name or 'number street' to search")
+    parser.add_argument("--street-area", metavar="STREET",
+                        help="Compute street surface area (length x width) in sq ft")
     parser.add_argument("--street", help="Search by street name (also fetches street data)")
     parser.add_argument("--address", help="Search by full address (number + street)")
     parser.add_argument("--parcel-id", help="Search by Brookline parcel ID")
@@ -386,13 +542,27 @@ Examples:
                         "Brookline Buildings (Accela)")
         discover_fields(MASSDOT_ROADS_URL, MASSDOT_ROADS_LAYER,
                         "MassDOT Roads (statewide)")
+        discover_fields(MASSDOT_INVENTORY_URL, MASSDOT_INVENTORY_LAYER,
+                        "MassDOT Road Inventory (width/lanes/surface)")
         return
 
-    if not any([args.query, args.street, args.address, args.parcel_id, args.loc_id]):
+    if not any([args.query, args.street, args.street_area, args.address,
+                args.parcel_id, args.loc_id]):
         parser.print_help()
         sys.exit(1)
 
     use_massgis = args.source == "massgis"
+
+    # ---- Street area computation ----
+    if args.street_area:
+        print(f"Computing street area for: {args.street_area}\n")
+        segments, summary = compute_street_area(args.street_area)
+        if args.raw:
+            print(json.dumps({"segments": segments, "summary": summary},
+                             indent=2, default=str))
+        else:
+            print(format_street_area_summary(segments, summary))
+        return
 
     # ---- LOC_ID search (MassGIS only) ----
     if args.loc_id:
