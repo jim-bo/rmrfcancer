@@ -82,10 +82,12 @@ Think of these embeddings as coordinates on a map of concepts. Just as latitude 
 #| output: false
 
 import pandas as pd
-import numpy as np
 
-# 1. Load the pre-calculated MDS data
-df_raw = pd.read_parquet("example_embedding.parquet")
+# 1. Load the pre-calculated MDS data.
+# keep_default_na is required: the patient row's nct_id is the literal string
+# "N/A", which pandas would otherwise read as NaN and ojs_define would then
+# emit as invalid JSON, silently killing the plot below.
+df_raw = pd.read_csv("example_embedding.csv", keep_default_na=False)
 
 # Hardcoded fix for the patient summary (index 0 in our MDS plot)
 fixed_patient_summary = """Age: 60

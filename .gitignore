@@ -1,8 +1,14 @@
-.quarto/
-_site/
+# Quarto build output (published by CI, never committed)
+/_site/
+/docs/
+/.quarto/
+**/*.quarto_ipynb
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+
+# Local
 .env
 .DS_Store
 *.log
-
-/.quarto/
-**/*.quarto_ipynb

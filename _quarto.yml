@@ -1,6 +1,12 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
+  # Explicit allowlist: only these are rendered and published. Without it, any
+  # stray .md/.qmd dropped in the repo root gets built into the public site.
+  render:
+    - index.qmd
+    - about.qmd
+    - posts/
 
 website:
   description: "A blog built with Quarto"
@@ -23,4 +29,3 @@ format:
     monofont: "Fira Code"
     fontsize: 1.1em
     linestretch: 1.7
-    embed-resources: true

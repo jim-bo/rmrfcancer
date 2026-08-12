@@ -4,11 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-quarto-cli = "*"
-plotly = "*"
+# All the site render needs: pandas reads the post's CSV, jupyter provides the
+# kernel Quarto's python engine executes in.
 pandas = "*"
+jupyter = "*"
 
 [dev-packages]
+# Only needed to regenerate example_embedding.csv from _data_generator.ipynb,
+# which reads the upstream synthetic_*_embeddings.parquet files (not in repo).
+scikit-learn = "*"
+plotly = "*"
+pyarrow = "*"
 
 [requires]
 python_version = "3.12"
