@@ -171,60 +171,87 @@ data = plot_data_raw.x.map((_, i) => ({
   const patientSummary = marked.parse(data[0].Description);
 
   // FLEXBOX CONTAINER
-  // We give the info box an ID 'info-sidebar' to target it directly
-  const div = html`<div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start; justify-content: center;">
-    <div id="plot-area" style="width: 60%; min-width: 300px; max-width: 800px;"></div>
-    <div id="info-sidebar" style="width: 35%; max-width: 500px; height: 500px; padding: 15px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px; font-size: 0.8em; overflow-y: auto;">
+  // We give the info box an ID 'info-sidebar' to target it directly.
+  // The panes wrap rather than shrink: under ~740px of usable width there is no
+  // room for legible text beside the plot, so the sidebar drops underneath it
+  // instead of collapsing into a sliver.
+  const div = html`<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; justify-content: center;">
+    <div id="plot-area" style="flex: 2 1 420px; min-width: 0; max-width: 800px;"></div>
+    <div id="info-sidebar" style="flex: 1 1 300px; min-width: 0; max-width: 500px; height: 500px; padding: 15px; background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px; font-size: 0.8em; overflow-y: auto;">
       <!-- We inject the parsed HTML directly -->
     </div>
   </div>`;
 
+  const plotArea = div.querySelector("#plot-area");
+  const sidebar = div.querySelector("#info-sidebar");
+
   // Set initial content
-  div.querySelector("#info-sidebar").innerHTML = patientSummary;
+  sidebar.innerHTML = patientSummary;
 
-  // Define Plot
-  const plot = Plot.plot({
-    height: 500,
-    grid: true,
-    x: { label: "PC1" },
-    y: { label: "PC2" },
-    style: {
-        fontSize: "16px",
-        "--plot-legend-font-size": "16px",
-        "--plot-axis-label-font-size": "16px",
-        "--plot-axis-tick-font-size": "14px"
-    },
-    marks: [
-      Plot.dot(data, {x: "x", y: "y", fill: "Type", r: 8}),
-      Plot.tip(data, Plot.pointer({x: "x", y: "y", title: "Name"}))
-    ],
-    color: {
-        legend: true,
-        domain: ["Trial", "Patient"],
-        range: ["#007d65", "#d9534f"],
-        style: { fontSize: "16px" }
-    }
-  });
-
-  // Attach Listeners
-  // We explicitly bind 'data' to the circles to ensure 'd' is the data object
-  d3.select(plot)
-    .selectAll("circle")
-    .data(data)
-    .on("mouseenter", (event, d) => {
-      // Update text directly without triggering a re-render
-      div.querySelector("#info-sidebar").innerHTML = marked.parse(d.Description);
-      d3.select(event.currentTarget).attr("r", 12).attr("stroke", "black");
-    })
-    .on("mouseleave", (event) => {
-      // Do NOT revert text; keep the last hovered details visible
-      // div.querySelector("#info-sidebar").innerHTML = patientSummary;
-
-      // Only reset the visual style of the point
-      d3.select(event.currentTarget).attr("r", 8).attr("stroke", "none");
+  const draw = (plotWidth) => {
+    // Define Plot
+    // The explicit width matters: Plot defaults to 640px regardless of its
+    // container, which overflowed the pane at every viewport size.
+    const plot = Plot.plot({
+      width: plotWidth,
+      height: plotWidth < 500 ? 380 : 500,
+      grid: true,
+      x: { label: "PC1" },
+      y: { label: "PC2" },
+      style: {
+          fontSize: "16px",
+          "--plot-legend-font-size": "16px",
+          "--plot-axis-label-font-size": "16px",
+          "--plot-axis-tick-font-size": "14px"
+      },
+      marks: [
+        Plot.dot(data, {x: "x", y: "y", fill: "Type", r: 8}),
+        Plot.tip(data, Plot.pointer({x: "x", y: "y", title: "Name"}))
+      ],
+      color: {
+          legend: true,
+          domain: ["Trial", "Patient"],
+          range: ["#007d65", "#d9534f"],
+          style: { fontSize: "16px" }
+      }
     });
 
-  div.querySelector("#plot-area").append(plot);
+    // Attach Listeners
+    // We explicitly bind 'data' to the circles to ensure 'd' is the data object
+    d3.select(plot)
+      .selectAll("circle")
+      .data(data)
+      .on("mouseenter", (event, d) => {
+        // Update text directly without triggering a re-render
+        sidebar.innerHTML = marked.parse(d.Description);
+        d3.select(event.currentTarget).attr("r", 12).attr("stroke", "black");
+      })
+      .on("mouseleave", (event) => {
+        // Do NOT revert text; keep the last hovered details visible
+        // sidebar.innerHTML = patientSummary;
+
+        // Only reset the visual style of the point
+        d3.select(event.currentTarget).attr("r", 8).attr("stroke", "none");
+      });
+
+    plotArea.replaceChildren(plot);
+  };
+
+  // Size the plot from the pane's own width once it is in the document, and
+  // redraw whenever that changes. OJS's `width` builtin reports the width of
+  // the page, not of this pane, so it cannot be used here. `min-width: 0` on
+  // the pane keeps its width independent of the plot, so this cannot loop.
+  let lastWidth = 0;
+  const resize = new ResizeObserver(([entry]) => {
+    const w = Math.round(entry.contentRect.width);
+    if (w > 0 && w !== lastWidth) {
+      lastWidth = w;
+      draw(w);
+    }
+  });
+  resize.observe(plotArea);
+  invalidation.then(() => resize.disconnect());
+
   return div;
 }
 ```
