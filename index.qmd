@@ -12,4 +12,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-
+Writing in progress — the first post is on its way.

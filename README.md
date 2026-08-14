@@ -32,7 +32,8 @@ never committed.
 | --- | --- |
 | `index.qmd` | Post listing / home page |
 | `about.qmd` | About page |
-| `posts/<slug>/index.qmd` | One directory per post, assets alongside |
+| `posts/<slug>/index.qmd` | One directory per published post, assets alongside |
+| `_wip/<slug>/` | Parked drafts — present in the repo, never built or published |
 | `_style_guide.md` | Quanta-style writing guide the posts are held to |
 | `_quarto.yml` | Site config, including the explicit `render:` allowlist |
 
@@ -41,9 +42,14 @@ allowlist in `_quarto.yml` is deliberate — without it, any stray `.md` dropped
 the repo root gets built and published (this is how an internal notes file once
 ended up live on the site).
 
+That underscore rule is what parks a draft: anything under `_wip/` stays in the
+repo and in git history but is never rendered, listed, indexed, or put in the RSS
+feed. To publish a parked piece, move its directory back under `posts/`. To work
+on one, move it back temporarily — Quarto will not preview it from `_wip/`.
+
 ## Regenerating post data
 
-`posts/ai-doctor-patient-relationship/_data_generator.ipynb` produces
+`_wip/ai-doctor-patient-relationship/_data_generator.ipynb` produces
 `example_embedding.csv`. It reads upstream `synthetic_*_embeddings.parquet` files
 that are **not** in this repo, and needs the dev dependencies:
 
